@@ -778,24 +778,6 @@
   ^+  t.a
   [i.a $(a (skim t.a |=(c/_i.a !(b c i.a))))]
 ::
-++  spin
-  |*  {a/(list) b/_|=({* *} [** +<+]) c/*}
-  ::  ?<  ?=($-([_?<(?=($~ a) i.a) _c] [* _c]) b)
-  |-
-  ?~  a
-    ~
-  =+  v=(b i.a c)
-  [i=-.v t=$(a t.a, c +.v)]
-::
-++  spun
-  |*  {a/(list) b/_|=({* *} [** +<+])}
-  =|  c/_+<+.b
-  |-
-  ?~  a
-    ~
-  =+  v=(b i.a c)
-  [i=-.v t=$(a t.a, c +.v)]
-::
 ++  swag                                                ::  infix
   |*  {{a/@ b/@} c/(list)}
   (scag +<-> (slag +<-< c))
@@ -10079,7 +10061,16 @@
     ++  wisp                                            ::  core tail
       %-  ulva
       %+  cook
-        |=(a/(list {p/term q/foot}) (~(gas by *(map term foot)) a))
+        |=  a/(list {p/term q/foot})
+        =|  take/(set term)
+        =+  cur=a
+        |-
+          ?~  cur
+            (~(gas by *(map term foot) a))
+          ?:  (~(has in take) p.i.cur)
+            ~|  taken-name+p.i.cur
+            !!
+          $(take (~(put in take) p.i.cur), cur t.cur)
       (most muck boog)
     ::
     ++  toad                                            ::  untrap parser exp
