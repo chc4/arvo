@@ -471,23 +471,21 @@
   ^+  t.a
   [i.a $(a (skim t.a |=(c/_i.a !(b c i.a))))]
 ::
-++  spin
+++  spin                                                ::  stateful turn
   |*  {a/(list) b/_|=({* *} [** +<+]) c/*}
-  ::  ?<  ?=($-([_?<(?=($~ a) i.a) _c] [* _c]) b)
+  ^-  {(list _-:(b)) _c}
+  =/  acc/(list _-:(b))  ~
   |-
   ?~  a
-    ~
-  =+  v=(b i.a c)
-  [i=-.v t=$(a t.a, c +.v)]
+    [acc c]
+  =^  res/_-:(b)  c  (b i.a c)
+  $(acc (welp acc ~[res]), a t.a, c c)
 ::
-++  spun
+++  spun                                                ::  internal spin
   |*  {a/(list) b/_|=({* *} [** +<+])}
   =|  c/_+<+.b
-  |-
-  ?~  a
-    ~
-  =+  v=(b i.a c)
-  [i=-.v t=$(a t.a, c +.v)]
+  =+  [p q]=(spin a b c)
+  p
 ::
 ++  swag                                                ::  slice
   |*  {{a/@ b/@} c/(list)}
