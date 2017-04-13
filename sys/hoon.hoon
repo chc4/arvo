@@ -1,4 +1,4 @@
-::                                                      ::
+!:                                                      ::
 ::::    /sys/hoon                                       ::
   ::                                                    ::
 ~>  %slog.[0 leaf+"hoon-assembly"]
@@ -5486,8 +5486,8 @@
   ::                                            ::::::  compositions
     {$new p/twig q/twig}                                ::  =|  push bunt
     {$fix p/(list (pair wing twig)) q/twig}             ::  =:  q with p changes
-    {$var p/taro q/twig r/twig}                         ::  =/  typed variable
-    {$rev p/taro q/twig r/twig}                         ::  =;  =/(q p r)
+    {$var p/tako q/twig r/twig}                         ::  =/  typed variable
+    {$rev p/tako q/twig r/twig}                         ::  =;  =/(q p r)
     {$set p/wing q/twig r/twig}                         ::  =.  r with p as q
     {$huh p/wing q/twig r/twig s/twig}                  ::  =?  conditional =.
     {$rap p/twig q/twig}                                ::  =<  =>(q p)
@@ -5521,6 +5521,7 @@
     {$need p/$@(p/@ {p/@ q/@}) q/twig}                  ::  !?
     {$fail $~}                                          ::  !!
   ==                                                    ::
+++  tako  $@(term twig)                                 ::
 ++  taro  $@(term (pair term twig))                     ::
 ++  tyre  (list {p/term q/twig})                        ::
 ++  tyke  (list (unit twig))                            ::
@@ -6366,7 +6367,7 @@
         {$var *}
       ?@  p.gen
         [%pin [%name p.gen q.gen] r.gen]
-      [%pin [%cast [%coat p.gen] q.gen] r.gen]
+      [%pin [%cast p.gen q.gen] r.gen]
     ::
         {$rev *}  [%var p.gen r.gen q.gen]
         {$set *}
@@ -9351,7 +9352,7 @@
     ++  expl  |.(;~(gunk sym loaf loaf))                ::  term, two twigs
     ++  expm  |.((butt ;~(gunk rope loaf rick)))        ::  several [tile twig]s
     ++  expn  |.(;~(gunk loaf (stag %conp (butt hank))))::  autoconsed twigs
-    ++  expo  |.(;~(gunk wise loaf loaf))               ::  =;
+    ++  expo  |.(;~(gunk wite loaf loaf))               ::  =;
     ++  expp  |.(;~(gunk (butt rick) loaf))             ::  [wing twig]s, twig
     ++  expq  |.(;~(gunk rope loaf loaf))               ::  wing and two twigs
     ++  expr  |.(;~(gunk loaf wisp))                    ::  twig and core tail
@@ -9511,6 +9512,10 @@
       ==
     ==
   ::
+  ++  wite  ;~  pose
+              ;~(sfix sym ;~(less fas (easy ~)))
+              wide
+            ==
   ++  wise  %+  cook
               |=({a/term b/(unit twig)} ?~(b a [a u.b]))
             ;~(plug sym (punt ;~(pfix fas wide)))
